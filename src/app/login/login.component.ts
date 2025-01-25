@@ -256,7 +256,6 @@ export class LoginComponent {
       }
       this.authService.setToken(data.jwt);
       
-      // Update the redirection logic
       if (this.authService.isAdmin()) {
         this.router.navigate(['/admin-dashboard']);
       } else if (this.authService.isUser()) {
