@@ -18,7 +18,6 @@ export class MovieService {
     private http: HttpClient,
     private authService: AuthService
   ) {
-    // Load saved IDs immediately when service is created
     this.loadSavedMovieIds();
   }
 
@@ -30,14 +29,11 @@ export class MovieService {
       .set('Authorization', `Bearer ${token}`)
       .set('Content-Type', 'application/json');
 
-    console.log('Fetching saved movie IDs...');
     this.http.get<string[]>('/api/admin/movies/saved/ids', {
       headers
     }).subscribe({
       next: (response) => {
-        console.log('Received saved movie IDs:', response);
         const ids = new Set(response);
-        console.log('Created Set of IDs:', Array.from(ids));
         this.savedMovieIds.next(ids);
       },
       error: (error) => {
@@ -48,7 +44,6 @@ export class MovieService {
   }
 
   refreshSavedMovies() {
-    console.log('Refreshing saved movies...');
     this.loadSavedMovieIds();
   }
 

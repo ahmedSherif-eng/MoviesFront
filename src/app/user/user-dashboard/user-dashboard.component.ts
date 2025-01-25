@@ -432,7 +432,6 @@ export class UserDashboardComponent implements OnInit {
   }
 
   loadPage(page: number) {
-    console.log(`Loading page ${page}`);
     this.isLoading = true;
     this.errorMessage = '';
 
@@ -476,7 +475,7 @@ export class UserDashboardComponent implements OnInit {
 
   searchMovies(page: number = 0) {
     if (!this.searchQuery.trim()) {
-      this.loadPage(0); // Load all movies if search is empty
+      this.loadPage(0); 
       return;
     }
 
