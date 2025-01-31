@@ -9,7 +9,7 @@ import { AuthService } from './auth/auth.service';
 import { Router } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 
-// Admin guard function
+
 const adminGuard = () => {
   const authService = inject(AuthService);
   const router = inject(Router);
@@ -22,7 +22,6 @@ const adminGuard = () => {
   return false;
 };
 
-// User guard function
 const userGuard = () => {
   const authService = inject(AuthService);
   const router = inject(Router);
