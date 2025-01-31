@@ -60,10 +60,16 @@ import { AuthService } from '../auth/auth.service';
         </form>
 
         <div class="footer">
-          <a routerLink="/about" class="about-link">
-            <i class="fas fa-info-circle"></i>
-            About Us
-          </a>
+          <div class="footer-links">
+            <a routerLink="/about" class="about-link">
+              <i class="fas fa-info-circle"></i>
+              About Us
+            </a>
+            <a routerLink="/register" class="register-link">
+              <i class="fas fa-user-plus"></i>
+              Create Account
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -195,8 +201,15 @@ import { AuthService } from '../auth/auth.service';
       border-top: 1px solid #eee;
     }
 
-    .about-link {
-      color: #333;  /* Dark link color */
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .about-link,
+    .register-link {
+      color: #333;
       text-decoration: none;
       font-size: 14px;
       display: inline-flex;
@@ -205,8 +218,9 @@ import { AuthService } from '../auth/auth.service';
       transition: color 0.3s ease;
     }
 
-    .about-link:hover {
-      color: #666;  /* Lighter on hover */
+    .about-link:hover,
+    .register-link:hover {
+      color: #666;
     }
 
     @media (max-width: 480px) {
