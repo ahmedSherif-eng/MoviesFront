@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { inject } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 import { Router } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
 
 // Admin guard function
 const adminGuard = () => {
@@ -51,6 +52,10 @@ export const routes: Routes = [
     path: 'user-dashboard', 
     component: UserDashboardComponent,
     canActivate: [() => userGuard()]
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' }
